@@ -1,0 +1,181 @@
+body {
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: whitesmoke;
+}
+
+
+.container-1 {
+    margin-top: 50px;
+    padding-bottom: 30px;
+}
+
+.container-1 h1 {
+    font-size: 7em;
+    margin-bottom: 0.2em;
+}
+
+.container-1 h3 {
+    font-size: 2em;
+}
+
+.container-1 p {
+    font-size: 1.2em;
+}
+
+.timeframe {
+    border: 1px solid #7F27FF;
+    border-radius: 8px;
+    width: 400px;
+    display: inline-block;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    padding: 0px 30px 30px 30px;
+}
+
+input[type="radio"] {
+    accent-color: #7F27FF;
+}
+
+.orange-highlight {
+    color: #FF5700;
+}
+
+.purple-highlight {
+    color: #7F27FF;
+}
+
+.text-input {
+    background-color: white;
+    padding: 12px 25px 12px 25px;
+    font-size: 1.2em;
+    color: black;
+    border: 1px solid #7F27FF;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    margin-right: -5px;
+    width: 250px;
+}
+
+.submit-button-search {
+    font-size: 1.2em;
+    background-color: #7F27FF;
+    color: white;
+    font-weight: 300;
+    padding: 12px 30px 12px 30px;
+    border: 1px solid #7F27FF;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin-left: 0px;
+}
+
+.submit-button-reset {
+    font-size: 1.2em;
+    background-color: transparent;
+    color: white;
+    font-weight: 300;
+    padding: 12px 30px 12px 30px;
+    border: 1px solid #7F27FF;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.submit-button-reset:hover {
+    cursor: pointer;
+    border: 1px solid white;
+}
+
+.submit-button-search:hover {
+    cursor: pointer;
+    border: 1px solid white;
+}
+
+.ranking-container {
+    display: inline-block;
+    width: auto;
+}
+
+.ranked-post {
+    box-shadow: rgba(127, 39, 255, 0.09) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 50px;
+    color: white;
+    background-color: #161618;
+    border-radius: 10px;
+}
+
+.ranked-post:hover {
+    border: 1px solid #7F27FF;
+    box-shadow: rgba(127, 39, 255, 0.30) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    color: #FF5700;
+}
+
+.reddit-pic {
+    position: absolute;
+    height: 180px;
+    padding-right: 500px;
+}
+
+a:link { 
+    text-decoration: none; 
+  } 
+  a:visited { 
+    text-decoration: none; 
+  } 
+  a:hover { 
+    text-decoration: none; 
+  } 
+  a:active { 
+    text-decoration: none; 
+  }
+
+.result-header p {
+    font-size: 1.2em;
+}
+
+@media only screen and (max-width: 600px) {
+    .container-1 h1 {
+        font-size: 4em;
+    }
+    .ranking-container {
+        width: 100%;
+    }
+}
+
+#progressBar {
+    display: inline-block;
+    display: none;
+    width: 350px;
+    margin-top: 1.2em;
+}
+
+#myProgress {
+    width: 100%;
+    background-color: transparent;
+}
+
+#myBar {
+    width: 1%;
+    height: 30px;
+    background-color: #7F27FF;
+}
+
+#rocket {
+    position: relative;
+    bottom: 0px;
+    left: 10px;
+}
+
+#rocket2 {
+    position: fixed;
+    z-index: 1000;
+    font-size: 7em;
+    transform: rotate(-180deg);
+    display: inline-block;
+    top: -200px;
+    right: -200px;
+}
