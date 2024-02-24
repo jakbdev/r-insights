@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reddit Insights</title>
+    <link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+    <link rel="icon" type="image/x-icon" href= "{{ url_for('static',filename='images/logo.png') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+<body>
+    <div class="container-1">
+        <h1><span class="orange-highlight">r/</span>insights <span id="rocket">🚀</span></h1>
+        <h3>Find out what the people of <span class="orange-highlight">Reddit</span> talk about.</h3>
+        <p>Type in your <span class="purple-highlight">niche</span> to get the most popular posts and discussions within your field</p>
+        <p>to create the most relevant and valuable content for <span class="purple-highlight">you audience.</span></p>
+        <form method="POST">
+
+            <div class="timeframe">
+
+                <p>Choose the timeframe in which you want Reddit to be analyzed:</p>
+
+                <input type="radio" id="all_time" name="timeframe" class="timeframe-radio" value="all">
+                <label for="all_time">All time</label><br>
+              
+                <input type="radio" id="year" name="timeframe" class="timeframe-radio" value="year">
+                <label for="year">Last Year</label><br>
+              
+                <input type="radio" id="month" name="timeframe" class="timeframe-radio" value="month">
+                <label for="month">Last month</label><br>
+              
+                <input type="radio" id="week" name="timeframe" class="timeframe-radio" value="week">
+                <label for="week">Last week</label><br>
+              
+                <input type="radio" id="day" name="timeframe" class="timeframe-radio" value="day">
+                <label for="day">Last 24h</label><br>
+              
+                <input type="radio" id="hour" name="timeframe" class="timeframe-radio" value="hour">
+                <label for="hour">Last hour</label>
+              </div>
+              
+
+            <br>
+
+            <input type="text" id="subreddit_name" name="subreddit_name" class="text-input">
+            <input type="submit" value="Get posts" class="submit-button-search" onclick="move()">
+        </form>
+        
+        <div id="progressBar">
+            <div id="myProgress">
+                <div id="myBar"></div>
+            </div>
+        </div>
+
+        <br>
+
+        <form method="GET" action="/home">
+            <input type="submit" value="Reset Search" class="submit-button-reset">
+        </form>
+
+    </div>
+
+    <span id="rocket2">🚀</span>
+
+    {% if ranked_posts %}
+        {% if ranked_posts != None %}
+            <div class="result-header">
+                <p>Results for <span class="niche-highlight">{{ keyword }}</span> in timeframe: {{ chosen_timeframe }}</p>
+            </div>
+
+            <div class="ranking-container">
+                    {% for elem in ranked_posts %}
+                        <a href="{{ elem[2] }}">
+                            <div class="ranked-post">
+                                <h4>{{ elem[0] }}</h4>
+                                <p>Score: {{ elem[1] }}</p>
+                                <p>{{ elem[2] }}</p>
+                                <br>
+                            </div>
+                        </a>
+                    {% endfor %}
+            </div>
+        {% else %}
+                <h4>No posts or relevant subreddits were found.</h4>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
